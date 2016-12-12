@@ -1,3 +1,6 @@
+# MS211 - Exerc 2
+# Lucas Cunha Agustini - 172655
+
 require "matrix"
 
 ddvar = lambda do |f,var|

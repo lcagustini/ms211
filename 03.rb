@@ -1,3 +1,8 @@
+# MS211 - Exerc 3
+# Lucas Cunha Agustini - 172655
+# Andre Figueiredo de Almeida - 164047
+# Joao Víctor Brazileu Spuri - 155943
+
 a = [[32, 8, 8, 0, 0, 0, 0, 0, 0, 0],
      [4, 25, -3, 6, 0, 0, 0, 10, 0, 0],
      [4, -3, 30, 8, 0, 2, 0, -9, 0, 0],
@@ -41,6 +46,7 @@ def precise? x, x0, a, b
 end
 
 # Gauss-Jacobi
+# Utiliza a matriz original para calcular k
 (10**2).times do
     l = x.clone
     for i in (0...x.length) do
@@ -54,6 +60,7 @@ end
 end
 
 # Gauss-Seidel
+# Utiliza a matriz que ja esta sendo gerada para calcular k
 (10**2).times do
     l = x.clone
     for i in (0...x.length) do

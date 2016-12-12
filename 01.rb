@@ -1,4 +1,5 @@
-# some tools
+# MS211 - Exerc 2
+# Lucas Cunha Agustini - 172655
 minus = lambda do |f,g|
     lambda do |x|
         f[x] - g[x]
@@ -51,7 +52,6 @@ inf = lambda do |f,g|
     end
 end
 
-# The limit operator
 lim = lambda do |f,eps,prec|
     lambda do |x|
         if inf[norm[minus[plus_eps[eps/2.0][f], plus_eps[eps][f]]], const[prec]][x]
@@ -62,8 +62,7 @@ lim = lambda do |f,eps,prec|
     end
 end
 
-# The derivative scheme
-derivative_sheme = lambda do |f|
+derivative = lambda do |f|
     lambda do |x|
         lambda do |eps|
             div[minus[plus_eps[eps][f], min_eps[eps][f]], mult[const[2], const[eps]]][x]
@@ -71,10 +70,9 @@ derivative_sheme = lambda do |f|
     end
 end
 
-# The derivative operator at precision 1e-16 is the limit of the derivative scheme
 ddx = lambda do |f|
     lambda do |x|
-        lim[derivative_sheme[f][x],1,1e-16][0]
+        lim[derivative[f][x],1,1e-16][0]
     end
 end
 
